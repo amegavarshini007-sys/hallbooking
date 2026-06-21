@@ -1,0 +1,584 @@
+/* GOOGLE FONT */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* THEME COLORS */
+
+:root{
+    --bottle-green:#1B4332;
+    --dark-green:#081C15;
+    --light-green:#2D6A4F;
+    --gold:#D4AF37;
+    --white:#F8F9FA;
+}
+
+/* BODY */
+
+body{
+    background:#f5f7f6;
+}
+
+/* NAVBAR */
+
+nav{
+
+    background:#1B4332;
+
+    padding:20px 60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 20px;
+    font-size:18px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+/* PAGE TITLE */
+
+.page-title{
+    text-align:center;
+    font-size:42px;
+    margin-top:30px;
+    color:var(--bottle-green);
+    font-weight:700;
+}
+
+/* SUB TITLE */
+
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:40px;
+    font-size:18px;
+}
+
+/* HALL CONTAINER */
+
+.hall-container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(350px,1fr));
+
+    gap:35px;
+
+    padding:40px;
+}
+
+/* CARD */
+
+.hall-card{
+
+    width:360px;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+    transition:0.4s;
+}
+
+.hall-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
+}
+/* IMAGE */
+
+.hall-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+}
+
+/* HALL NAME */
+
+.hall-card h3{
+    color:var(--bottle-green);
+    font-size:24px;
+    padding:15px;
+}
+
+/* DETAILS */
+
+.hall-card p{
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:10px;
+    color:#555;
+    font-size:16px;
+}
+
+/* PRICE */
+
+.price{
+    color:var(--gold);
+    font-size:22px;
+    font-weight:700;
+    padding:15px;
+}
+
+/* BUTTON */
+
+.book-btn{
+    background:var(--gold);
+    color:white;
+    border:none;
+    width:90%;
+    margin:15px;
+    padding:12px;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.book-btn:hover{
+    background:var(--bottle-green);
+}
+
+/* HERO SECTION */
+
+.hero{
+    height:600px;
+
+    background:
+    linear-gradient(
+        rgba(27,67,50,0.75),
+        rgba(27,67,50,0.75)
+    ),
+    url("images/royalhall.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-family:'Cinzel',serif;
+    font-size:72px;
+    margin-bottom:25px;
+    letter-spacing:3px;
+    text-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+.hero p{
+    font-size:26px;
+    margin-bottom:80px;
+    letter-spacing:1px;
+    font-weight:300;
+}
+/* FOOTER */
+
+footer{
+    background:var(--dark-green);
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+.hero-btn{
+    background:#FFD166;
+    color:#1B4332;
+    text-decoration:none;
+    padding:16px 45px;
+    border-radius:50px;
+    font-size:19px;
+    font-weight:700;
+    transition:0.4s;
+    box-shadow:0 6px 18px rgba(0,0,0,0.3);
+}
+
+.hero-btn:hover{
+    background:#D4AF37;
+    color:white;
+    transform:translateY(-5px);
+}
+.logo{
+    color:#FFD166;
+    font-size:34px;
+    font-weight:700;
+    letter-spacing:2px;
+    font-family:'Cinzel',serif;
+}
+.auth-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.auth-buttons a{
+
+    text-decoration:none;
+
+    padding:12px 30px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:0.3s;
+}
+.login-btn{
+
+    background:#2D6A4F;
+
+    color:white;
+}
+
+.login-btn:hover{
+
+    background:#1B4332;
+}
+.register-btn{
+
+    background:#D4AF37;
+
+    color:white;
+}
+
+.register-btn:hover{
+
+    background:#b8941f;
+}
+.login-btn,
+.register-btn{
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hall-card{
+        width:95%;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+}
+/* LOGIN & REGISTER PAGE */
+
+.form-page{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(27,67,50,0.85),
+        rgba(27,67,50,0.85)
+    ),
+    url("../images/royalhall.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.form-card{
+
+    width:420px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+
+    text-align:center;
+}
+
+.form-card h1{
+
+    font-family:'Cinzel',serif;
+
+    color:#1B4332;
+
+    margin-bottom:30px;
+}
+
+.form-card input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:18px;
+
+    border:2px solid #D4AF37;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:0.3s;
+}
+
+.form-card input:focus{
+
+    border-color:#1B4332;
+
+    box-shadow:0 0 10px rgba(27,67,50,0.25);
+}
+
+.form-btn{
+
+    width:100%;
+
+    background:#D4AF37;
+
+    color:#1B4332;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.form-btn:hover{
+
+    background:#1B4332;
+
+    color:white;
+}
+
+.form-card p{
+
+    margin-top:20px;
+}
+
+.form-card a{
+
+    color:#1B4332;
+
+    font-weight:600;
+
+    text-decoration:none;
+}
+/* BOOKING PAGE */
+
+.form-card select{
+
+    width:100%;
+
+    padding:15px;
+
+    border:2px solid #D4AF37;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+    font-size:16px;
+}
+
+.form-card label{
+
+    display:block;
+
+    text-align:left;
+
+    margin-bottom:8px;
+
+    color:#1B4332;
+
+    font-weight:600;
+}
+
+.checkbox-group{
+
+    text-align:left;
+
+    margin-bottom:25px;
+}
+
+.checkbox-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+}
+
+/* SUCCESS PAGE */
+
+.success-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+    linear-gradient(
+        rgba(27,67,50,0.85),
+        rgba(27,67,50,0.85)
+    ),
+
+    url("../images/royalhall.jpg");
+
+    background-size:cover;
+}
+
+.success-card{
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    width:500px;
+}
+
+.success-card h1{
+
+    color:#1B4332;
+
+    margin-bottom:20px;
+}
+
+.success-card p{
+
+    margin-bottom:30px;
+}
+.about{
+    padding:60px;
+    text-align:center;
+}
+
+.about h2{
+    color:#1B4332;
+    margin-bottom:20px;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+}
+.services{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    padding:40px;
+}
+
+.service-card{
+    background:white;
+    padding:30px;
+    width:220px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+.search-box{
+    width:350px;
+    padding:15px;
+    display:block;
+    margin:20px auto;
+    border:2px solid #D4AF37;
+    border-radius:10px;
+}html{
+    scroll-behavior:smooth;
+}
+.top-btn{
+
+position:fixed;
+
+bottom:20px;
+
+right:20px;
+
+background:#D4AF37;
+
+border:none;
+
+padding:15px;
+
+border-radius:50%;
+
+cursor:pointer;
+}
+.gallery{
+text-align:center;
+padding:50px;
+}
+
+.gallery img{
+width:300px;
+height:200px;
+object-fit:cover;
+margin:10px;
+border-radius:15px;
+}
+input:invalid,
+select:invalid{
+    border:2px solid red;
+}
+
+input:valid,
+select:valid{
+    border:2px solid #2D6A4F;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Book Hall</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="form-page">
+
+    <div class="form-card">
+
+        <h1>Book Your Hall</h1>
+
+        <input type="text" id="name" placeholder="Full Name" required>
+
+<input type="email" id="email" placeholder="Email Address" required>
+
+<input type="tel" id="mobile" placeholder="Mobile Number" required>
+
+<input type="date" id="date" required>
+
+        <label>Function Date</label>
+
+        <input type="date">
+
+        <label>Function Type</label>
+
+       <select id="functionType" required>
+
+            <option>Wedding</option>
+
+            <option>Reception</option>
+
+            <option>Birthday Party</option>
+
+            <option>Corporate Event</option>
+
+            <option>Engagement</option>
+
+        </select>
+
+        <label>Additional Services</label>
+
+        <div class="checkbox-group">
+
+            <label>
+                <input type="checkbox">
+                Food Catering
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Decoration
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Photography
+            </label>
+
+            <label>
+                <input type="checkbox">
+                DJ & Music
+            </label>
+
+        </div>
+
+       <button
+class="form-btn"
+onclick="validateBooking()">
+
+Confirm Booking
+
+</button>
+        
+
+    </div>
+
+</div>
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const hallName = params.get("hall");
+
+async function validateBooking(){
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let mobile = document.getElementById("mobile").value.trim();
+    let date = document.getElementById("date").value;
+    let functionType = document.getElementById("functionType").value;
+
+    if(name === "" || email === "" || mobile === "" || date === ""){
+        alert("Please fill all required details!");
+        return;
+    }
+
+    if(mobile.length < 10){
+        alert("Enter a valid mobile number!");
+        return;
+    }
+
+    try{
+
+        const response = await fetch(
+            "http://localhost:5000/api/bookings/create",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    hallName,
+                    name,
+                    email,
+                    mobile,
+                    date,
+                    functionType
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if(data.success){
+
+            alert("Booking Successful!");
+
+            window.location.href = "success.html";
+
+        }else{
+
+            alert(data.message);
+
+        }
+
+    }catch(error){
+
+        alert("Server Error!");
+
+        console.log(error);
+
+    }
+
+}
+
+</script>
+</body>
+</html>
