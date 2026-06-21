@@ -1,21 +1,24 @@
 const mongoose = require("mongoose");
+
 console.log("DB FILE LOADED");
+
 const connectDB = async () => {
 
     try {
 
-        await mongoose.connect(
-            "mongodb://127.0.0.1:27017/hallcollection"
+        const conn = await mongoose.connect(
+            process.env.MONGO_URI
         );
 
         console.log("MongoDB Connected");
-        console.log("Database Name:",
-mongoose.connection.name);
+        console.log("Database Name:", conn.connection.name);
 
     } catch (error) {
 
         console.log("MongoDB Error:");
         console.log(error);
+
+        process.exit(1);
 
     }
 
